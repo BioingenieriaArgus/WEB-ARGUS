@@ -1,8 +1,22 @@
-// Efecto de cambio de color al hacer scroll
-window.addEventListener('scroll', function() {
-    const header = document.querySelector('header');
-    header.classList.toggle('sticky', window.scrollY > 0);
-});
+function openModal(id) {
+  document.getElementById(id).style.display = "block";
+}
 
-// Validación simple o animaciones de entrada (opcional)
-console.log("Sitio de ARGUS BIOINGENIERIA cargado correctamente.");
+function closeModal(id) {
+  document.getElementById(id).style.display = "none";
+}
+
+// Cerrar modal al hacer clic fuera del contenido
+window.onclick = function(event) {
+  const modals = document.querySelectorAll(".modal");
+  modals.forEach(modal => {
+    if (event.target === modal) {
+      modal.style.display = "none";
+    }
+  });
+};
+
+// Navegación suave
+document.addEventListener("DOMContentLoaded", () => {
+  const links = document.querySelectorAll("nav a");
+  links.forEach(link
